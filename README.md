@@ -7,4 +7,7 @@
 - 이후 __firebase__ 를 이용하여 사용자의 정보를 따로 저장할 계획입니다.
 - 서비스가 목적이 아닌 html, css, js 사용법을 익히는 것이 목적이므로 코드가 엉망일 수 있으며, 시간날 때 꾸준히 수정하고 여러 기능을 추가할 계획입니다.
 ## 개발 일지
- 
+- To do list 리스트 추가 기능 추가 (input, button)
+- 리스트 개별 삭제기능 추가 (useState 변경시 렌더링되는 특성을 이용하여 임시 state 선언하여 삭제시 1씩 추가.)
+- 다크모드 기능 추가 (darkmode usestate 추가하여 상태에 따라 각 요소 색상 변경.)
+- 다크모드 버튼 css 업데이트 (슬라이드 css 추가. [참고 영상](https://www.youtube.com/watch?v=IGzhnFDcSsw))
