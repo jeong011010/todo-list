@@ -5,17 +5,19 @@ import './App.css';
 function App() {
 
   let [lists, setlists] = useState([])
-  const [data,setdata] = useState('');
-  const [tmp,settmp]=useState(0);
-  const[darkMode, setDarkMode] = useState(false)
+  const [data,setdata] = useState('')
+  const [tmp,settmp]=useState(0)
+  const [darkMode, setDarkMode] = useState(false)
+  const [check, setCheck] = useState(false)
 
   const todolist = lists.map((list)=> (
 
       list.deleted === false
-      ?<div className="item" style={{backgroundColor: darkMode?'black':'rgb(230, 230, 230)',
+      ?<div className="items"  onClick={()=>{setCheck(!check);}} style={{backgroundColor: darkMode?'black':'rgb(230, 230, 230)',
       color: darkMode?'lightgray':'black'}}
       >
-        <div>{list.data}</div>
+        <div className="item" 
+        style={{textDecoration: check?'line-through':'none'}}>{list.data}</div>
         <span onClick={()=>{list.deleted=true; settmp(tmp+1)}}>🗑️</span>
       </div>
       : null
@@ -27,13 +29,11 @@ function App() {
         <div>
           <div className="container">
             <span>🌞</span>
-            <div className="switch-checkbox">
               <label className="switch">
                 <input type="checkbox"
                 onChange={()=>setDarkMode(!darkMode)}/>
                 <span className="slider round"> </span>
               </label>
-            </div>
             <span>🌛</span>
           </div>
           

@@ -31,7 +31,7 @@
   height: 30px;
 }
 
-.item{
+.items{
   border-radius: 10px;
   width: 500px;
   margin-top: 5px;
@@ -51,6 +51,7 @@
 }
 
 .container{
+  padding-top: 10px;
   margin-right:20px;
   display: flex;
   justify-content: right;
@@ -58,7 +59,7 @@
 }
 
 .switch {
-  margin-top:11px;
+  margin-top:3px;
   position: relative;
   display: inline-block;
   width: 45px;
