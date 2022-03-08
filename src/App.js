@@ -26,6 +26,9 @@ function App() {
       : null
 
   ));
+
+  const addData=() => {setlists([...lists,{id:id,data:data,deleted:false,checked:false,}]); setid(id+1)}
+
   return (
     <div className="app" style={{backgroundColor: darkMode?'gray':'white'}}>
       <div className="todolist" style={{backgroundColor: darkMode?'black':'rgb(96, 218, 218)'}}>
@@ -45,9 +48,9 @@ function App() {
           <h1>To do list</h1>
           <div>
               <div>
-                <input className="input_item" onChange={event=>setdata(event.target.value)}
+                <input className="input_item" onChange={event=>setdata(event.target.value)} onKeyPress={ (e) => {if(e.key==='Enter'){addData();}}}
                 style={{backgroundColor: darkMode?'gray':'white',color: darkMode?'lightgray':'black'}}/>
-                <button className="input_button" onClick={ () => {setlists([...lists,{id:id,data:data,deleted:false,checked:false,}]); setid(id+1)}}
+                <button className="input_button" onClick={ () => {addData()}}
                 style={{color: darkMode?'black':'white',backgroundColor: darkMode?'gray':'#ade2cc'}}>+</button>
               </div>
           </div>
