@@ -10,6 +10,7 @@ function App() {
   const [id,setid] = useState(0)
   const [darkMode, setDarkMode] = useState(false)
   const [time, setTime] = useState(new Date());
+  const [succes, setSucces] = useState(0);
 
   const todolist = lists.map((list)=> (
 
@@ -20,7 +21,7 @@ function App() {
         <div className="item" style={{textDecoration: list.checked?'line-through':'none'}}>
           {list.data}</div>
         <div>
-          <span onClick={()=>{list.checked=(!list.checked); settmp(!tmp);}}>{list.checked?'✅':'🟩'}</span>
+          <span onClick={()=>{list.checked=(!list.checked); if(list.checked){setSucces(succes+1);}else{setSucces(succes-1);}}}>{list.checked?'✅':'🟩'}</span>
           <span onClick={()=>{list.deleted=true; settmp(!tmp);}}>🗑️</span>
         </div>
       </div>
@@ -66,14 +67,13 @@ function App() {
         </div>
         <div className="main_title" style={{color: darkMode?'gray':'white'}}>
           <h1>To do list</h1>
-          <div>
-              <div>
+              <div >
                 <input className="input_item" onChange={event=>setdata(event.target.value)} onKeyPress={ (e) => {if(e.key==='Enter'){addData();}}}
                 style={{backgroundColor: darkMode?'gray':'white',color: darkMode?'lightgray':'black'}}/>
                 <button className="input_button" onClick={ () => {addData()}}
                 style={{color: darkMode?'black':'white',backgroundColor: darkMode?'gray':'#ade2cc'}}>+</button>
+              <p>완료 횟수 : {succes}</p>
               </div>
-          </div>
         </div>
       </div>
       <div className="list">
