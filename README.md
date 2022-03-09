@@ -11,3 +11,6 @@
 - 리스트 개별 삭제기능 추가 (useState 변경시 렌더링되는 특성을 이용하여 임시 state 선언하여 삭제시 1씩 추가.)
 - 다크모드 기능 추가 (darkmode usestate 추가하여 상태에 따라 각 요소 색상 변경.)
 - 다크모드 버튼 css 업데이트 (슬라이드 css 추가. [참고 영상](https://www.youtube.com/watch?v=IGzhnFDcSsw))
+- 리스트 개별 체크 버튼 추가
+- 버튼 대용 'enter'로 목록 추가 기능 추가
+- 리스트 체크 횟수 출력 기능 추가
