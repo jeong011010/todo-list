@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
   const [tmp,settmp]=useState(false)
   const [id,setid] = useState(0)
   const [darkMode, setDarkMode] = useState(false)
+  const [time, setTime] = useState(new Date());
 
   const todolist = lists.map((list)=> (
 
@@ -27,12 +28,31 @@ function App() {
 
   ));
 
-  const addData=() => {setlists([...lists,{id:id,data:data,deleted:false,checked:false,}]); setid(id+1)}
+  const addData=() => {
+    if(data===''){
+      alert("할 일을 작성해주세요");
+    }
+    else{
+      setlists([...lists,{id:id,data:data,deleted:false,checked:false,}]); 
+      setid(id+1);
+    }
+  }
+
+  useEffect(()=>{
+    const id = setInterval(()=>{
+      setTime(new Date());
+    }, 1000);
+    return (()=>clearInterval(id))
+  }, []);
 
   return (
     <div className="app" style={{backgroundColor: darkMode?'gray':'white'}}>
       <div className="todolist" style={{backgroundColor: darkMode?'black':'rgb(96, 218, 218)'}}>
-        <div>
+        <div style={{display: 'flex', justifyContent:"space-between" ,paddingTop: '10px', marginRight: '20px', marginLeft: '20px'}}>
+          
+          <span style={{color: darkMode?'gray':'white', transitionDuration: '0.5s'}}
+          >{time.toLocaleTimeString()}</span>
+          
           <div className="container">
             <span>🌞</span>
               <label className="switch">
