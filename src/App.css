@@ -1,22 +1,23 @@
-.app{
+.app {
   height: 100vh;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
-.todolist{
+
+.todolist {
   text-align: center;
   margin-bottom: 10px;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
 
-.main_title{
+.main_title {
   padding-bottom: 20px;
   transition-property: color;
   transition-duration: 0.5s;
 }
 
-.input_item{
+.input_item {
   border-radius: 20px;
   font-size: 15px;
   width: 300px;
@@ -25,15 +26,15 @@
   outline: none;
   padding-left: 30px;
   padding-right: 30px;
-  transition-property: background-color,color;
+  transition-property: background-color, color;
   transition-duration: 0.5s;
 }
 
-.input_button{
+.input_button {
   font-size: 20px;
   font-weight: bolder;
   border-radius: 10px;
-  border:none;
+  border: none;
   margin-left: 15px;
   width: 30px;
   height: 30px;
@@ -41,52 +42,52 @@
   transition-duration: 0.5s;
 }
 
-.items{
+.items {
   border-radius: 10px;
   width: 500px;
   margin-top: 5px;
   margin-bottom: 5px;
-  padding-top:10px;
-  padding-bottom:10px;
-  padding-left:50px;
-  padding-right:50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
   justify-content: space-between;
   display: flex;
   transition-property: background-color, color;
   transition-duration: 0.5s;
 }
 
-.list{
+.list {
   align-items: center;
   flex-direction: column;
-  display:flex;
+  display: flex;
 }
 
-.container{
+.container {
   display: flex;
   justify-content: right;
   align-items: center;
 }
 
 .switch {
-  margin-top:3px;
+  margin-top: 3px;
   position: relative;
   display: inline-block;
   width: 45px;
   height: 17px;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.switch_checkbox{
+.switch_checkbox {
   padding: 10px;
 }
 
-.slider{
+.slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -111,11 +112,11 @@
 }
 
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: #8f8f8f;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
